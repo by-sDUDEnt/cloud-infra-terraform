@@ -9,3 +9,14 @@ variable "instance_name" {
   type        = string
   default     = "learn-terraform"
 }
+
+variable "vpc_cidr" {
+  description = "VPC base CIDR"
+  type        = string
+  validation {
+    condition     = tonumber(split("/", var.vpc_cidr)[1]) <= 20
+    error_message = "The mask should be numericly <= 20"
+  }
+
+}
+
