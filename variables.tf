@@ -20,3 +20,10 @@ variable "vpc_cidr" {
 
 }
 
+
+variable "my_ip" {
+  description = "My IP for ssh SG ingress rule"
+  type        = string
+}
+
+
