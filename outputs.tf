@@ -7,3 +7,8 @@ output "instance_public_ip" {
   description = "IP of the instance"
   value       = aws_instance.app_server.public_ip
 }
+
+output "private_instance_hostname" {
+  description = "IP of the instance"
+  value       = aws_instance.app_server_private.private_dns
+}
